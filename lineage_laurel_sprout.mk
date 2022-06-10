@@ -19,16 +19,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common CherishOs stuff
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+# Inherit some common RicedroidOs stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Cherish Official
-CHERISH_BUILD_TYPE := OFFICIAL
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=RAYAN(BASUBHAJANTRI)
+# Ricedroid Official
+RICE_BUILD_TYPE := OFFICIAL
 
-EXTRA_UDFPS_ANIMATIONS := true
-HAS_FOD := true
+# UDFPS ICONS/ANIMATIONS
+TARGET_HAS_UDFPS := true
+TARGET_HAS_FOD := true
+
+# maintainer flag
+RICE_MAINTAINER := BASUBHAJANTRI
 
 # FaceUnlock
 TARGET_FACE_UNLOCK_SUPPORTED := true
@@ -47,7 +49,7 @@ $(call inherit-product, $(LOCAL_PATH)/laurel_sprout.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := laurel_sprout
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := cherish_laurel_sprout
+PRODUCT_NAME := lineage_laurel_sprout
 PRODUCT_MODEL := Mi A3
 
 
@@ -63,7 +65,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Gapps build
-WITH_GMS := true
+WITH_GAPPS := true
 
 # Quick tap
 TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := true
