@@ -68,3 +68,6 @@ TARGET_SUPPORTS_QUICK_TAP := true
 
 # Enable blur support
 TARGET_ENABLE_BLUR := true
+
+# Inherit from custom vendor
+$(call inherit-product, vendor/miuicamera/config.mk)
